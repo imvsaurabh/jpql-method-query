@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.github.imvsaurabh.jpql.NewappApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.671 s -- in com.github.imvsaurabh.jpql.NewappApplicationTests
