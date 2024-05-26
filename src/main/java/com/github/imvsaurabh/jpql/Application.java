@@ -1,5 +1,7 @@
 package com.github.imvsaurabh.jpql;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -47,7 +49,9 @@ public class Application {
         return args -> {
             String fltKey = "100:26052024:UA";
             String recLoc = "ABC123";
-            repository.findAll(findByFlightAndRecLoc(fltKey, recLoc)).forEach(System.out::println);
+            List<TestTbl> all = repository.findAll(findByFlightAndRecLoc(fltKey, recLoc));
+            String json = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT).writeValueAsString(all);
+            System.out.println(json);
         };
     }
 }
